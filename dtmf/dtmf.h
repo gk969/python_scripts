@@ -42,7 +42,7 @@ const u8 DTMF_NUM[16][2] = {
     
     {WAVE_852, WAVE_1336},
     {WAVE_852, WAVE_1477},
-    {WAVE_941, WAVE_1336},
+    {WAVE_941, WAVE_1633},
     {WAVE_941, WAVE_1209},
     
     {WAVE_941, WAVE_1477},

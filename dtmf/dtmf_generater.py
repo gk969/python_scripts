@@ -1,10 +1,10 @@
 import numpy as np
-import simpleaudio as sa
 import matplotlib.pyplot as plt
 
 CYCLES = 20
 SAMPLE_RATE = 32000
 TONE_SETS=[697, 770, 852, 941, 1209, 1336, 1477, 1633]
+LOW_FRQ_RATIO = 0.8
 
 sine_sets=[]
 cut_sine_sets=[]
@@ -21,6 +21,8 @@ for tone in TONE_SETS:
                 wave=wave[0:i]
                 break
     cut_sine_sets.append(wave)
+
+cut_sine_sets=[sets*LOW_FRQ_RATIO for sets in cut_sine_sets[:4]] + cut_sine_sets[4:]
 
 with open("dtmf_wave.h", "wt") as out:
     for i in range(0, len(TONE_SETS)):
